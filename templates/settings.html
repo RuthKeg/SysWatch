@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Paramètres</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="settings">
+      <h1>⚙️ Paramètres</h1>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for cat,msg in messages %}
+            <div class="flash {{ cat }}">{{ msg }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <form method="post">
+        <div class="checkbox">
+          <label><input type="checkbox" name="cpu" {% if prefs.show_cpu %}checked{% endif %}> Afficher CPU</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="ram" {% if prefs.show_ram %}checked{% endif %}> Afficher RAM</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="disk" {% if prefs.show_disk %}checked{% endif %}> Afficher Disque</label>
+        </div>
+        <div style="margin-top:16px;">
+          <button type="submit">Enregistrer</button>
+          <a href="/" class="link-btn">Retour</a>
+        </div>
+      </form>
+      <hr>
+      <p>Thème : <button id="theme-toggle-settings" class="icon-btn">🌓 Basculer</button></p>
+    </div>
+  </div>
+
+<script src="{{ url_for('static', filename='js/settings.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Connexion</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="login-container">
+      <h1>Connexion</h1>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for cat,msg in messages %}
+            <div class="flash {{ cat }}">{{ msg }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <form method="post" autocomplete="off">
+        <label for="username">Identifiant</label>
+        <input id="username" name="username" type="text" required>
+        <label for="password">Mot de passe</label>
+        <input id="password" name="password" type="password" required>
+        <button type="submit">Se connecter</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

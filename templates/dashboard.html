@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Dashboard Système</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <h1>⚙️ SysWatch</h1>
+      <div class="top-actions">
+        
+        <a href="/settings" class="link-btn">⚙️ Paramètres</a>
+        <a href="/logout" class="link-btn">🔓 Déconnexion</a>
+      </div>
+      <div class="card">
+        <h2>Monitoring distant 🖥️</h2>
+        <div class="remote-box">
+            <input type="text" id="remote-ip" placeholder="Adresse IP du PC distant (ex: 192.168.0.25)">
+            <button id="connect-btn">Connecter</button>
+        </div>
+        <p id="remote-status"></p>
+        </div>
+
+    </div>
+
+    <!-- CPU -->
+    {% if prefs.show_cpu %}
+    <div class="card">
+      <h2>CPU <span class="badge" id="cpu-value">0%</span></h2>
+      <div class="progress-bar"><div id="cpu-bar"></div></div>
+      <canvas id="cpuChart" height="80"></canvas>
+    </div>
+    {% endif %}
+
+    <!-- RAM -->
+    {% if prefs.show_ram %}
+    <div class="card">
+      <h2>RAM <span class="badge" id="ram-value">0%</span></h2>
+      <div class="progress-bar"><div id="ram-bar"></div></div>
+    </div>
+    {% endif %}
+
+    <!-- DISK -->
+    {% if prefs.show_disk %}
+    <div class="card">
+      <h2>Disque <span class="badge" id="disk-value">0%</span></h2>
+      <div class="progress-bar"><div id="disk-bar"></div></div>
+    </div>
+    {% endif %}
+  </div>
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>
