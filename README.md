@@ -1,11 +1,11 @@
 # 💻 System Monitor Dashboard (Flask + Tkinter + JS)
 
 Une application **Full Stack de monitoring système**, moderne et interactive — développée avec **Flask (Python)**, **Chart.js**, et **Tkinter**.  
-Elle permet de **visualiser en temps réel** les ressources de ton ordinateur (CPU, RAM, disque), de **basculer entre thème clair/sombre**, et même de **surveiller d’autres machines sur le réseau** 🌐.
+Elle permet de **visualiser en temps réel** les ressources de ton ordinateur (CPU, RAM, disque), de **basculer entre thème clair/sombre**, et même de **surveiller d’autres machines sur le réseau**.
 
 ---
 
-## 🚀 Fonctionnalités principales
+## Fonctionnalités principales
 
 ### 🎛️ Interface Web dynamique
 - Visualisation **en temps réel** des métriques système (CPU, RAM, disque).  
@@ -38,7 +38,7 @@ Elle permet de **visualiser en temps réel** les ressources de ton ordinateur (C
 
 ---
 
-## 🧩 Structure du projet
+## Structure du projet
 
 diagnostic-systeme/
 │
@@ -79,7 +79,7 @@ diagnostic-systeme/
 
 ## ⚙️ Installation & exécution
 
-### 1️⃣ Installer les dépendances
+### Installer les dépendances
 Assure-toi d’avoir Python 3.10+ installé, puis exécute :
 
 ```bash
